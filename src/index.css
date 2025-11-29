@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+html,body{
+  overflow-x: hidden;
+}
+
+#slider-boxes {
+  display: flex !important;
+}
+
+.slick-slide div{
+  margin:8px;
+}
+
