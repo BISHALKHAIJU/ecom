@@ -4,12 +4,19 @@ import { Link } from "react-router-dom";
 import { useCartContext } from "../context/CartContext";
 
 const CartPage = () => {
-  const { cart, increaseQuantity, decreaseQuantity, removeCart } =
+  const { cart, increaseQuantity, decreaseQuantity, removeCart} =
     useCartContext();
 
+    
+
   if (cart.length === 0) {
-    return <div>Your Cart Is Empty</div>;
+    return <div className="text-3xl font-medium text-center">Your Cart is Empty....</div>;
   }
+
+  const grandTotal = cart.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
 
   return (
     <>
@@ -30,13 +37,20 @@ const CartPage = () => {
               <p className="text-xl font-normal">{c.price}$ × {c.quantity} = {c.price * c.quantity}$</p>
               <button onClick={()=>removeCart(c.id)} className="bg-red-300 text-center px-1 rounded-sm">Remove</button>
               </div>
-            
-
             </div>
               
               </div>    
-        ))}
+        ))} 
+        <div className="px-5 flex items-center justify-between ">
+          <h1 className="text-start">Total Price={grandTotal}$</h1>
+          <div className="flex gap-2">
+          <button className="bg-gray-400 rounded-xl p-1">Clear Cart</button>
+          <button className="bg-black text-white rounded-xl p-1">Place Order</button>
+
+          </div>
+          </div>
       </div>
+
     </>
   );
 };

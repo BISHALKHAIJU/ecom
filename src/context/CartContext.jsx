@@ -69,6 +69,7 @@ export const CartProvider = ({ children }) => {
     );
   };
 
+
   //step 3 put all the shared values inside value
   const value = {
     addToCart,
@@ -77,6 +78,7 @@ export const CartProvider = ({ children }) => {
     removeCart,
     increaseQuantity,
     decreaseQuantity,
+    
   };
 
   //step 4
