@@ -1,7 +1,8 @@
 import React from "react";
+import ProductCard from "../pages/ShopPage/ProductCard";
 
 const TopSelling = () => {
-  const images = [
+  const data = [
     {
       id: 1,
       image: "/topSellings/Frame 40.png",
@@ -9,9 +10,8 @@ const TopSelling = () => {
       desc: "VERTICAL STRIPED SHIRT",
       rating: "★★★★★",
       rate: "5/5",
-      price: "212$",
-      actualPrice: "232$",
-      discount: "-20%",
+      price: 212,
+      
     },
     {
       id: 2,
@@ -20,7 +20,7 @@ const TopSelling = () => {
       desc: "COURAGE GRAPHIC T-SHIRT",
       rating: "★★★★☆",
       rate: "4/5",
-      price: "100$ ",
+      price: 100,
       
     },
     {
@@ -30,7 +30,7 @@ const TopSelling = () => {
       desc: "LOOSE FIT BERMUDA SHORTS",
       rating: "★★★☆☆",
       rate: "3/5",
-      price: "70$",
+      price: 70,
       
     },
     {
@@ -40,44 +40,21 @@ const TopSelling = () => {
       desc: "FADED SKINNY JEANS",
       rating: "★★★★☆",
       rate: "4/5",
-      price: "90$",
+      price: 90,
     },
   ];
 
   return (
     <>
-      <h1 className="text-center py-6 font-bold text-5xl">Top Selling</h1>
-      <div className="container mx-auto px-4 sm:px-6 py-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 ">
-        {images.map((info)=>( 
-          <div key={info.id} className="text-start px-4 text-sm sm:text-md md:text-xl py-5 ">
-            {/* <img src="/newArrivals/Frame 32.png" alt="desc" /> */}
-            <img className="w-full  sm:w-full sm:h-70 md:w-full md:h-60  lg:w-full lg:h-78 object-cover" src={info.image} alt="{info.alt}"/>
-            <div className="py-2 font-bold">
-              <p>{info.desc}</p>
-            </div>
-            <div className="flex gap-4 font-medium">
-              <p>{info.rating}....</p>
-              <p>{info.rate}</p>
-            </div>
-            <div className="flex gap-4 py-2 font-medium">
-              <p>{info.price}</p>
-              <p className="line-through text-gray-500 italic">{info.actualPrice}</p>
-              <div className="py-1">
-                    <p className=" bg-red-200 text-red-500 text-center rounded-xl w-[6vh]">{info.discount}</p>
-              </div>
-            </div>
-            
-            </div>
-            
-        ))}
-
-        </div>
+      <div id="topSelling">
+        <h1 className="text-center text-3xl sm:text-4xl md:text-5xl font-bold py-6">Top Sellings</h1>
+        <ProductCard product={data}/>
+      </div>
         <div className="flex justify-center">
           <button className="border rounded-2xl w-20 items-center ">View All</button>
         </div>
-      </div>
-      
+        <div className="border-t border-gray-500 mt-3 mx-auto w-[87%]"></div>
+
     </>
   );
 };

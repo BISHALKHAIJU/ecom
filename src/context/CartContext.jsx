@@ -7,6 +7,8 @@ export const CartContext = createContext(null);
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
+  
+
   useEffect(() => {
     const storedCart = localStorage.getItem("cart");
     if (storedCart) {
@@ -33,6 +35,7 @@ export const CartProvider = ({ children }) => {
             : item
         );
       }
+      
 
       return [
         ...prevCart,
@@ -45,7 +48,8 @@ export const CartProvider = ({ children }) => {
         },
       ];
     });
-  };
+    
+  }
 
   const removeCart = (id) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== id));
@@ -69,10 +73,10 @@ export const CartProvider = ({ children }) => {
     );
   };
 
-
   //step 3 put all the shared values inside value
   const value = {
     addToCart,
+  
     cart,
     setCart,
     removeCart,

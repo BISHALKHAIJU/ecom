@@ -5,16 +5,14 @@ const Branding = () => {
     <>
       <div className="bg-black text-white w-full h-[8vh] px-10 py-2 ">
 
-        <div>
+        <div className="flex justify-between items-center text-2xl font-medium mt-3">
           <p>
             ZARA
-
-            <br/>
-            <br/>
-            <br/>
-            
-
           </p>
+          <p>GUCCI</p>
+          <p>CALVIN KLEIN</p>
+          <p>PRADA</p>
+          <p>VERSACE</p>
         </div>
         {/* <li className="lg:flex justify-between items-center px-10">
           <ul className="font-serif text-3xl font-bold "></ul>

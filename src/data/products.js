@@ -1,0 +1,223 @@
+const products=[{
+  id: "m1",
+      name: "GREEN FORMAL T-SHIRT",
+      image: "/menDress/tshirts1.png",
+      rating: "★ ★ ★ ★ ★",
+      rate: "5/5",
+      price: 70,
+      description:"A High Quality Formal Green T-shirt."
+      
+    },
+    {
+      id: "m2",
+      name: "PRINTED T-SHIRT",
+      image: "/menDress/tshirts2.png",
+      rating: "★ ★ ★ ★ ☆",
+      rate: "4/5",
+      price: 70,
+      
+    },
+    {
+      id: "m3",
+      name: "BLACK PRINTED T-SHIRT",
+      image: "/menDress/tshirts3.png",
+      rating: "★ ★ ★ ☆ ☆",
+      rate: "3/5",
+      price: 70,
+      
+    },
+    {
+      id: "m4",
+      name: "FORMAL T-SHIRT",
+      image: "/menDress/Frame 34.png",
+      rating: "★ ★ ★ ★ ☆",
+      rate: "4/5",
+      price: 70,
+      
+    },
+    {
+      id: "m5",
+      name: "pants",
+      image: "/menDress/Rectangle 12.png",
+      rating: "★ ★ ★ ★ ★",
+      rate: "5/5",
+      price: 70,
+      
+    },
+    {
+      id: "m6",
+      name: "pants",
+      image: "/menDress/Rectangle 7.png",
+      rating: "★ ★ ★ ★ ☆",
+      rate: "4/5",
+      price: 70,
+      
+    },
+    {
+      id: "m7",
+      name: "pants",
+      image: "/menDress/Rectangle 8.png",
+      rating: "★ ★ ★ ★ ☆",
+      rate: "4/5",
+      price: 70,
+      
+    },
+    {
+      id: "m8",
+      name: "pants",
+      image: "/menDress/Rectangle 11.png",
+      rating: "★ ★ ★ ☆ ☆",
+      rate: "3/5", 
+      price: 70,
+    },{
+
+        id: "a1",
+      name: "t-shirt",
+      price: 233,
+      image: "/menDress/formal1.png",
+      rating: "★ ★ ★ ☆ ☆",
+      rate: "3/5",
+    },
+    {
+      id: "a2",
+      name: "t-shirt",
+      price: 233,
+      image: "/menDress/tshirts3.png",
+      rating: "★ ★ ★ ★ ☆",
+      rate: "4/5",
+    },
+    {
+      id: "a3",
+      name: "t-shirt",
+      price: 233,
+      image: "/menDress/tshirts4.png",
+      rating: "★ ★ ★ ★ ★",
+      rate: "5/5",
+      actualPrice: 100,
+      discount: "-30%",
+    },
+    {
+      id: "a4",
+      name: "t-shirt",
+      price: 233,
+      image: "/menDress/tshirts2.png",
+      rating: "★★☆☆☆",
+      rate: "3/5",
+    },
+
+    {
+      id: "a5",
+      name: "FULL SLEVE SHIRT",
+      price: 233,
+      image: "/newArrivals/Frame 34.png",
+      rating: "★★★☆☆",
+      rate: "3/5",
+    },
+    {
+      id: "a6",
+      name: "PLAIN HALF T-SHIRT",
+      price: 233,
+      image: "/newArrivals/Frame 32.png",
+      rating: "★★★★★",
+      rate: "5/5",
+    },
+    {
+      id: "a7",
+      name: "JEANS HALF PANT",
+      price: 233,
+      image: "/topSellings/Frame 42.png",
+      rating: "★★★★☆",
+      rate: "4/5",
+    },
+    {
+      id: "a8",
+      name: "FROMAL PANT",
+      price: 233,
+      image: "/topSellings/Frame 43.png",
+      rating: "★★★★☆",
+      rate: "4/5",
+    },
+    
+     {
+      id: "w1",
+      name: "WOMEN FORMAL SHIRT",
+      image: "/womenDress/Rectangle 14.png",
+      rating: "★★★★★",
+      rate: "5/5",
+      price: 70,
+      description:"High quality Formal shirt",
+
+      
+    },
+    {
+      id: "w2",
+      name: "WOMEN FORMAL SHIRT",
+      image: "/womenDress/Rectangle 15.png",
+      rating: "★★★☆☆",
+      rate: "3/5",
+      price: 70,
+      actualPrice: 100,
+      discount: "-30%",
+    },
+    {
+      id: "w3",
+      name: "BLACK PRINTED T-SHIRT",
+      image: "/womenDress/tshirts3.png",
+      rating: "★★★★★",
+      rate: "5/5",
+      price: 70,
+      actualPrice: 100,
+      discount: "-30%",
+    },
+    {
+      id: "w4",
+      name: "FORMAL T-SHIRT",
+      image: "/womenDress/formal1.png",
+      rating: "★★★★☆",
+      rate: "4/5",
+      price: 70,
+      actualPrice: 100,
+      discount: "-30%",
+    },
+    {
+      id: "w5",
+      name: "FORMAL PANTS",
+      image: "/womenDress/Rectangle 13.png",
+      rating: "★★★☆☆",
+      rate: "3/5",
+      price: 70,
+      actualPrice: 100,
+      discount: "-30%",
+    },
+    {
+      id: "w6",
+      name: "SKINNY JEANS",
+      image: "/womenDress/Frame 71.png",
+      rating: "★★★★☆",
+      rate: "4/5",
+      price: 70,
+      actualPrice: 100,
+      discount: "-30%",
+    },
+    {
+      id: "w7",
+      name: "CARGO PANTS",
+      image: "/womenDress/Rectangle 9.png",
+      rating: "★★★★★",
+      rate: "5/5",
+      price: 70,
+      
+    },
+    {
+      id: "w8",
+      name: "SKINNY JEANS",
+      image: "/womenDress/Frame 33.png",
+      rating: "★★★☆☆",
+      rate: "3/5",
+      price: 70,
+      
+    },
+
+]
+
+export default products;

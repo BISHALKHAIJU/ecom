@@ -11,6 +11,7 @@ import CartPage from "./pages/CartPage.jsx";
 import AllProductPage from "./pages/ShopPage/allProductPage.jsx";
 import MenCategoryPage from "./pages/ShopPage/MenCategoryPage.jsx";
 import WomenCategoryPage from "./pages/ShopPage/WomenCategoryPage.jsx";
+import DetailPage from "./pages/ShopPage/DetailPage.jsx";
 
 const App = () => {
   return (
@@ -22,8 +23,9 @@ const App = () => {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/allProducts" element={<AllProductPage />} />
-            <Route path="/shop/men" element={<MenCategoryPage/>} />
-            <Route path="/shop/women" element={<WomenCategoryPage/>} />
+            <Route path="/shop/men" element={<MenCategoryPage />} />
+            <Route path="/shop/women" element={<WomenCategoryPage />} />
+            <Route path="/product/:id" element={<DetailPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/cart" element={<CartPage />} />

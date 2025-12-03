@@ -69,12 +69,8 @@ const Navbar = () => {
           <Link to="/onsale" className="hover:text-gray-600 transition">
             On Sale
           </Link>
-          <Link to="/new" className="hover:text-gray-600 transition">
-            New Arrivals
-          </Link>
-          <Link to="/brands" className="hover:text-gray-600 transition">
-            Brands
-          </Link>
+          <a href="#newArrivals">New Arrivals</a>
+          <a href="#topSelling">Top Selling</a>
         </div>
 
         {/* RIGHT SIDE: SEARCH + ICONS */}
@@ -168,7 +164,7 @@ const Navbar = () => {
                 onClick={() => setMenuOpen(false)}
                 className="font-bold"
               >
-                Cart ({totalItems} items)
+                Cart
               </Link>
             </div>
           </div>
