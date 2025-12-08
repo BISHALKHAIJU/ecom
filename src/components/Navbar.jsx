@@ -9,10 +9,12 @@ import {
 } from "lucide-react";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useCartContext } from "../context/CartContext";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [shopDropdownOpen, setShopDropdownOpen] = useState(false);
+  const { cartCount } = useCartContext();
 
   return (
     <>
@@ -90,13 +92,11 @@ const Navbar = () => {
             {/* CART ICON WITH BADGE */}
             <Link to="/cart" className="relative group">
               <ShoppingCart className="w-7 h-7 text-gray-800 group-hover:scale-110 transition" />
-
-              {/* Badge - shows only if items > 0 */}
-              {/* {totalItems > 0 && (
-                <span className="absolute -top-3 -right-3 bg-red-600 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center shadow-lg animate-bounce">
-                  {totalItems}
-                </span> */}
-              {/* )} */}
+              {cartCount > 0 && (
+                <span className="absolute -top-2 -right-2 ...">
+                  {cartCount}
+                </span>
+              )}
             </Link>
 
             {/* USER ICON */}

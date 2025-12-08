@@ -7,8 +7,8 @@ const ProductCard = ({ product }) => {
 
   return (
     <>
-      <div className="container mx- auto px-4 sm:px-6 py-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-6 gap-6">
+      <div className="container mx-auto px-4  py-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 px-6 gap-6">
           {product.map((item, id) => (
             <div
               className="text-start px-4 text-sm sm:text-md md:text-xl py-5"
@@ -16,7 +16,7 @@ const ProductCard = ({ product }) => {
             >
               <Link to={`/product/${item.id}`}>
                 <img
-                  className="w-full h-85 rounded-md object-cover"
+                  className="w-full h-auto rounded-md object-cover"
                   src={item.image}
                   alt={item.name}
                 />

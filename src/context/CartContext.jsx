@@ -1,14 +1,14 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
-//step 1 create the context
+//STEP 1 CREATE THE CONTEXT
 export const CartContext = createContext(null);
 
-//step 2 create the provider
+
+//STEP 2 CREATE THE PROVIDER
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-  
-
+  // Load cart from localStorage
   useEffect(() => {
     const storedCart = localStorage.getItem("cart");
     if (storedCart) {
@@ -16,27 +16,34 @@ export const CartProvider = ({ children }) => {
     }
   }, []);
 
-  //useeffect for addtocart first 1
+  // Save cart to localStorage
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  //create addtocart function with its product id name and image,price at second 2
+  //  Updated Add To Cart (correct merging).create addtocart function with its product id name and image,price at second 2
   const addToCart = (product) => {
     setCart((prevCart) => {
-      const existingItem = prevCart.find((item) => item.id === product.id);
+      // Match by id + color + size
+      const existingItem = prevCart.find(
+        (item) =>
+          item.id === product.id &&
+          item.selectedColor === product.selectedColor &&
+          item.selectedSize === product.selectedSize
+      );
+
       if (existingItem) {
+        // If exact match, increase quantity
         return prevCart.map((item) =>
-          item.id === product.id
-            ? {
-                ...item,
-                quantity: item.quantity + 1,
-              }
+          item.id === product.id &&
+          item.selectedColor === product.selectedColor &&
+          item.selectedSize === product.selectedSize
+            ? { ...item, quantity: item.quantity + product.quantity }
             : item
         );
       }
-      
 
+      // Otherwise create NEW cart line
       return [
         ...prevCart,
         {
@@ -44,12 +51,13 @@ export const CartProvider = ({ children }) => {
           name: product.name,
           image: product.image,
           price: product.price,
-          quantity: 1,
+          selectedColor: product.selectedColor,
+          selectedSize: product.selectedSize,
+          quantity: product.quantity, // use quantity from detail page
         },
       ];
     });
-    
-  }
+  };
 
   const removeCart = (id) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== id));
@@ -73,21 +81,30 @@ export const CartProvider = ({ children }) => {
     );
   };
 
-  //step 3 put all the shared values inside value
+  const clearCart = () =>{
+    setCart([]);
+  }
+
+  const cartCount = cart.length;
+
+
+  //STEP 3 PUT ALL THE SHARED VALUES INSIDE VALUE
   const value = {
     addToCart,
-  
     cart,
     setCart,
     removeCart,
     increaseQuantity,
     decreaseQuantity,
-    
+    clearCart,
+    cartCount,
   };
 
-  //step 4
+
+  //STEP 4 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
 
-//step 5
+
+//STEP 5
 export const useCartContext = () => useContext(CartContext);
