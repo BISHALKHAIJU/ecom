@@ -8,7 +8,7 @@ import { CartProvider } from "./context/CartContext.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import SignUpPage from "./pages/SignUpPage.jsx";
 import CartPage from "./pages/CartPage.jsx";
-import AllProductPage from "./pages/ShopPage/allProductPage.jsx";
+import AllProductPage from "./pages/ShopPage/AllProductPage.jsx";
 import MenCategoryPage from "./pages/ShopPage/MenCategoryPage.jsx";
 import WomenCategoryPage from "./pages/ShopPage/WomenCategoryPage.jsx";
 import DetailPage from "./pages/ShopPage/DetailPage.jsx";
