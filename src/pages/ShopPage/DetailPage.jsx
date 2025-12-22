@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useCartContext } from "../../context/CartContext";
 import { useParams } from "react-router-dom";
 import products from "../../data/products";
+import ReviewSectionPage from "./ReviewSectionPage";
 
 const DetailPage = () => {
   const { id } = useParams();
@@ -47,8 +48,8 @@ const DetailPage = () => {
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 md:max-w-5xl md:mx-auto px-4 gap-2 mt-7">
-        
+      <div className="grid  md:max-w-5xl md:mx-auto px-4 gap-10 mt-7">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:max-w-5xl md:mx-auto px-4 gap-16 mt-7">
         <div className="flex justify-center">
           <img
             className="w-full max-w-md object-cover"
@@ -148,7 +149,13 @@ const DetailPage = () => {
           </div>
 
         </div>
-      </div>
+        </div>
+                  <div><ReviewSectionPage /></div>
+        </div>
+        
+       {/* {Review Section} */}
+
+        
     </>
   );
 };
